@@ -916,6 +916,7 @@ p {
   .container {
     padding-right: 24px;
     padding-left: 24px;
+    overflow-x: hidden !important;
   }
 
   .h1.left {

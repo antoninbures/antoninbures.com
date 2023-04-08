@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="606px" height="420px" viewBox="0 0 606 420" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3 Copy</title>
+    <defs>
+        <linearGradient x1="112.896203%" y1="56.0456013%" x2="-16.9446504%" y2="45.5997892%" id="linearGradient-1">
+            <stop stop-color="#7CF4FF" stop-opacity="0.802829983" offset="0%"></stop>
+            <stop stop-color="#91D6FF" stop-opacity="0.751867239" offset="23.6532998%"></stop>
+            <stop stop-color="#88A6FF" stop-opacity="0.68673514" offset="47.9867788%"></stop>
+            <stop stop-color="#F4B7FC" stop-opacity="0.869689759" offset="76.0981206%"></stop>
+            <stop stop-color="#FF7DB0" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-49.3%" y="-126.4%" width="198.5%" height="352.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Playground" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LP" transform="translate(-125.000000, -607.000000)">
+            <g id="Group-3-Copy" transform="translate(257.000000, 693.000000)">
+                <path d="M171.813226,64.516129 C148.106419,64.516129 99.6004455,67.9685595 78.5836935,75.3985717 C49.9703947,85.5141766 36.7730972,97.6374562 29.9413131,123.23383 C21.3121955,155.564201 -4.55241748,157.15643 74.2600713,178.35684 C153.07256,199.557249 358.997738,146.484047 318.130116,116.033728 C309.176368,109.362323 304.383002,93.7647916 253.113841,75.3985717 C234.918462,68.8804169 191.489146,64.516129 171.813226,64.516129 Z" id="Oval" fill="url(#linearGradient-1)" filter="url(#filter-2)"></path>
+                <line x1="15.0537634" y1="0.28708134" x2="15.0537634" y2="239.712919" id="Line-4" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="28.8172043" y1="0.28708134" x2="28.8172043" y2="239.712919" id="Line-4" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="43.4408602" y1="0.28708134" x2="43.4408602" y2="239.712919" id="Line-4-Copy" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="57.2043011" y1="0.28708134" x2="57.2043011" y2="239.712919" id="Line-4-Copy-2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></line>
+                <line x1="71.827957" y1="0.28708134" x2="71.827957" y2="239.712919" id="Line-4-Copy-3" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="85.5913978" y1="0.28708134" x2="85.5913978" y2="239.712919" id="Line-4-Copy-4" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="100.215054" y1="0.28708134" x2="100.215054" y2="239.712919" id="Line-4-Copy-5" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="113.978495" y1="0.28708134" x2="113.978495" y2="239.712919" id="Line-4-Copy-6" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="128.602151" y1="0.28708134" x2="128.602151" y2="239.712919" id="Line-4-Copy-7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></line>
+                <line x1="142.365591" y1="0.28708134" x2="142.365591" y2="239.712919" id="Line-4-Copy-8" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="156.989247" y1="0.28708134" x2="156.989247" y2="239.712919" id="Line-4-Copy-9" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="171.612903" y1="0.28708134" x2="171.612903" y2="239.712919" id="Line-4-Copy-10" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="185.376344" y1="0.28708134" x2="185.376344" y2="239.712919" id="Line-4-Copy-11" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="200" y1="0.28708134" x2="200" y2="239.712919" id="Line-4-Copy-12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></line>
+                <line x1="213.763441" y1="0.28708134" x2="213.763441" y2="239.712919" id="Line-4-Copy-13" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="228.387097" y1="0.28708134" x2="228.387097" y2="239.712919" id="Line-4-Copy-14" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="242.150538" y1="0.28708134" x2="242.150538" y2="239.712919" id="Line-4-Copy-15" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="256.774194" y1="0.28708134" x2="256.774194" y2="239.712919" id="Line-4-Copy-16" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="270.537634" y1="0.28708134" x2="270.537634" y2="239.712919" id="Line-4-Copy-17" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></line>
+                <line x1="285.16129" y1="0.28708134" x2="285.16129" y2="239.712919" id="Line-4-Copy-18" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="298.924731" y1="0.28708134" x2="298.924731" y2="239.712919" id="Line-4-Copy-19" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="313.548387" y1="0.28708134" x2="313.548387" y2="239.712919" id="Line-4-Copy-20" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="13.3333333" x2="328.306113" y2="13.3333333" id="Line-5" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="27.9569892" x2="328.306113" y2="27.9569892" id="Line-5-Copy" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="41.7204301" x2="328.306113" y2="41.7204301" id="Line-5-Copy-2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="56.344086" x2="328.306113" y2="56.344086" id="Line-5-Copy-3" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="70.1075269" x2="328.306113" y2="70.1075269" id="Line-5-Copy-4" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="84.7311828" x2="328.306113" y2="84.7311828" id="Line-5-Copy-5" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="98.4946237" x2="328.306113" y2="98.4946237" id="Line-5-Copy-6" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="113.11828" x2="328.306113" y2="113.11828" id="Line-5-Copy-7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="126.88172" x2="328.306113" y2="126.88172" id="Line-5-Copy-8" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="141.505376" x2="328.306113" y2="141.505376" id="Line-5-Copy-9" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="155.268817" x2="328.306113" y2="155.268817" id="Line-5-Copy-10" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="169.892473" x2="328.306113" y2="169.892473" id="Line-5-Copy-11" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="183.655914" x2="328.306113" y2="183.655914" id="Line-5-Copy-12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="198.27957" x2="328.306113" y2="198.27957" id="Line-5-Copy-13" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="212.043011" x2="328.306113" y2="212.043011" id="Line-5-Copy-14" stroke="#FFFFFF" stroke-linecap="square"></line>
+                <line x1="0.296037973" y1="226.666667" x2="328.306113" y2="226.666667" id="Line-5-Copy-15" stroke="#FFFFFF" stroke-linecap="square"></line>
+            </g>
+        </g>
+    </g>
+</svg>

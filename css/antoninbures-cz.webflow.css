@@ -176,6 +176,7 @@ p {
   line-height: 32px;
   font-weight: 600;
   letter-spacing: 0.5px;
+  max-height: 32px;
 }
 
 .header-nav {

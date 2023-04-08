@@ -366,7 +366,7 @@ p {
 .vertical-scroll-wrapper {
   position: relative;
   overflow: hidden;
-  width: 220px;
+  width: 252px;
   height: 96px;
   flex-direction: column;
   justify-content: center;
@@ -1066,6 +1066,7 @@ p {
 
   .vertical-scroll-wrapper {
     overflow: hidden;
+    width: 220px;
   }
 
   .text-rotation-wrapper {

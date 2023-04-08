@@ -755,8 +755,8 @@ p {
 
 .arrow-box {
   position: absolute;
-  left: -72px;
-  top: -41%;
+  left: -60px;
+  top: -80px;
   right: auto;
   bottom: auto;
   display: flex;
@@ -768,8 +768,8 @@ p {
 
 .arrow-box.top-right {
   left: auto;
-  top: -48%;
-  right: -71px;
+  top: -90px;
+  right: -60px;
 }
 
 .arrow-box.ping-me {
@@ -779,8 +779,8 @@ p {
 
 .arrow-box.price {
   left: auto;
-  top: -2%;
-  right: -199px;
+  top: -20px;
+  right: -190px;
   align-items: flex-start;
 }
 
@@ -874,7 +874,7 @@ p {
 
   .arrow-box {
     left: -177px;
-    top: 8%;
+    top: 20px;
   }
 
   .arrow-box.top-right {

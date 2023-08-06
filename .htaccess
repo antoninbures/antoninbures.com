@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (archive.org_bot) [NC]
+RewriteRule .* - [R=403,L]
+
+order allow,deny
+Deny from 198.245.53.182
+Deny from 37.1.213.27
+Deny from 5.188.0.77
+Deny from 37.1.213.27
+allow from all

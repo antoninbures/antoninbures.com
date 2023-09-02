@@ -1,7 +1,0 @@
-URL/URL path to exclude: antoninbures.com (and all subdomains)
-time period of domain ownership: 2021-01-16 to present
-time period to exclude: 2021-01-16 to future
-
-URL/URL path to exclude: antoninbures.cz (and all subdomains)
-time period of domain ownership: 2015-07-14 to present
-time period to exclude: 2015-07-14 to future

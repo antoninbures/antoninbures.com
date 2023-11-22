@@ -111,7 +111,7 @@
     // on the page below.
     //
     // Github issue: https://github.com/lokesh/lightbox2/issues/663
-    $('<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay"></div><div id="lightbox" tabindex="-1" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""/><div class="lb-nav"><a class="lb-prev" role="button" tabindex="0" aria-label="Previous image" href="" ></a><a class="lb-next" role="button" tabindex="0" aria-label="Next image" href="" ></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0"></a></div></div></div></div>').appendTo($('body'));
+    $('<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay"></div><div id="lightbox" tabindex="-1" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""/><div class="lb-nav"><a href="" class="square-button-front lb-prev-button" role="button" tabindex="0" aria-label="Previous image"><span class="button-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 18L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 6L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a><a href="" class="square-button-front lb-next-button" role="button" tabindex="0" aria-label="Next image"><span class="button-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13 18L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13 6L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0"></a></div></div></div></div>').appendTo($('body'));
 
     // Cache jQuery objects
     this.$lightbox       = $('#lightbox');
@@ -155,7 +155,7 @@
       return false;
     });
 
-    this.$lightbox.find('.lb-prev').on('click', function() {
+    this.$lightbox.find('.lb-prev-button').on('click', function() {
       if (self.currentImageIndex === 0) {
         self.changeImage(self.album.length - 1);
       } else {
@@ -164,7 +164,7 @@
       return false;
     });
 
-    this.$lightbox.find('.lb-next').on('click', function() {
+    this.$lightbox.find('.lb-next-button').on('click', function() {
       if (self.currentImageIndex === self.album.length - 1) {
         self.changeImage(0);
       } else {
@@ -286,7 +286,7 @@
     // Show loading state
     this.$overlay.fadeIn(this.options.fadeDuration);
     $('.lb-loader').fadeIn('slow');
-    this.$lightbox.find('.lb-image, .lb-nav, .lb-prev, .lb-next, .lb-dataContainer, .lb-numbers, .lb-caption').hide();
+    this.$lightbox.find('.lb-image, .lb-nav, .lb-prev-button, .lb-next-button, .lb-dataContainer, .lb-numbers, .lb-caption').hide();
     this.$outerContainer.addClass('animating');
 
     // When image to show is preloaded, we send the width and height to sizeContainer()
@@ -457,20 +457,20 @@
     if (this.album.length > 1) {
       if (this.options.wrapAround) {
         if (alwaysShowNav) {
-          this.$lightbox.find('.lb-prev, .lb-next').css('opacity', '1');
+          this.$lightbox.find('.lb-prev-button, .lb-next-button').css('opacity', '1');
         }
-        this.$lightbox.find('.lb-prev, .lb-next').show();
+        this.$lightbox.find('.lb-prev-button, .lb-next-button').show();
       } else {
         if (this.currentImageIndex > 0) {
-          this.$lightbox.find('.lb-prev').show();
+          this.$lightbox.find('.lb-prev-button').show();
           if (alwaysShowNav) {
-            this.$lightbox.find('.lb-prev').css('opacity', '1');
+            this.$lightbox.find('.lb-prev-button').css('opacity', '1');
           }
         }
         if (this.currentImageIndex < this.album.length - 1) {
-          this.$lightbox.find('.lb-next').show();
+          this.$lightbox.find('.lb-next-button').show();
           if (alwaysShowNav) {
-            this.$lightbox.find('.lb-next').css('opacity', '1');
+            this.$lightbox.find('.lb-next-button').css('opacity', '1');
           }
         }
       }

@@ -72,6 +72,8 @@ body.lb-disable-scrolling {
     z-index: 10;
     display: flex;
     align-items: center;
+    gap: 12px;
+    padding: 24px;
 }
 
 .lb-container>.nav {

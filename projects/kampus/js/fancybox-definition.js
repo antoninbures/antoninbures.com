@@ -51,6 +51,12 @@ document.addEventListener('DOMContentLoaded', function () {
                   right: ["close"],
               },
           },
+          Thumbs: {
+            type: 'classic',
+          },
+          Carousel: {
+            transition: "slide",
+          },
       })
     }
 });

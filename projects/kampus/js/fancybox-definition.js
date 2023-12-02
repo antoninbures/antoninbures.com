@@ -39,9 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
       Fancybox.bind('[data-fancybox]', {
           contentClick: false,
           Images: {
-              Panzoom: {
-                  maxScale: 0,
-              },
+            initialSize: "fit",
+            Panzoom: {
+                maxScale: 0,
+            },
               
           },
           Toolbar: {

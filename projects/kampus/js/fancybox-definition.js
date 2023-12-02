@@ -1,6 +1,6 @@
 /* Vypravna galerie */
 import { Fancybox } from "./fancybox.js";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import "../css/fancybox.css";
 
 document.addEventListener('DOMContentLoaded', function () {
     var galleryItems = document.querySelectorAll('.gallery-item');

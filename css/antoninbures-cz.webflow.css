@@ -2412,10 +2412,6 @@ a:hover {
     padding-right: 24px;
   }
 
-  .row.is-still-row {
-    flex-flow: column;
-  }
-
   .padding-top {
     padding-bottom: 0;
     padding-left: 0;
@@ -2511,7 +2507,8 @@ a:hover {
   }
 
   .hero_image-background {
-    margin-top: -30%;
+    margin-top: -40%;
+    transform: translate3d(-50%, -50%, 0) scale(3);
   }
 
   .box {
@@ -2521,6 +2518,14 @@ a:hover {
   .box-cta {
     grid-column-gap: .5rem;
     grid-row-gap: .5rem;
+  }
+
+  .list {
+    font-size: 0.85rem;
+  }
+
+  .footer.padding-bottom {
+    padding-bottom: 1rem;
   }
 }
 

@@ -1,73 +1,235 @@
-<!DOCTYPE html><!-- Last Published: Wed Feb 26 2025 20:45:33 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.antoninbures.com" data-wf-page="671cb4f281ae6642a907ef41" data-wf-site="602ce80f7ad04e15a3aa545a" lang="cs" data-wf-locale="en" data-wf-collection="671cb4f281ae6642a907ef1e" data-wf-item-slug="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu"><head><meta charset="utf-8"/><title>Webflow Slots: Jak fungují a k čemu slouží v komponentovém systému?</title><meta content="Při tvorbě webových stránek ve Webflow se setkáte s možností vytvářet opakovaně použitelné komponenty (components) a do nich vkládat různé prvky, které vám umožní snadnou úpravu obsahu. Důležitým prvkem tohoto systému, který nedávno přibyl, jsou sloty, v originále Slot – místo v komponentě, kam můžete vkládat jiné, předem vytvořené komponenty. V tomto článku se podíváme na to, jak sloty fungují, jaký je jejich vztah ke komponentám a jak je efektivně využívat při tvorbě flexibilních a dynamických webů." name="description"/><meta content="Webflow Slots: Jak fungují a k čemu slouží v komponentovém systému?" property="og:title"/><meta content="Při tvorbě webových stránek ve Webflow se setkáte s možností vytvářet opakovaně použitelné komponenty (components) a do nich vkládat různé prvky, které vám umožní snadnou úpravu obsahu. Důležitým prvkem tohoto systému, který nedávno přibyl, jsou sloty, v originále Slot – místo v komponentě, kam můžete vkládat jiné, předem vytvořené komponenty. V tomto článku se podíváme na to, jak sloty fungují, jaký je jejich vztah ke komponentám a jak je efektivně využívat při tvorbě flexibilních a dynamických webů." property="og:description"/><meta content="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots.png" property="og:image"/><meta content="Webflow Slots: Jak fungují a k čemu slouží v komponentovém systému?" property="twitter:title"/><meta content="Při tvorbě webových stránek ve Webflow se setkáte s možností vytvářet opakovaně použitelné komponenty (components) a do nich vkládat různé prvky, které vám umožní snadnou úpravu obsahu. Důležitým prvkem tohoto systému, který nedávno přibyl, jsou sloty, v originále Slot – místo v komponentě, kam můžete vkládat jiné, předem vytvořené komponenty. V tomto článku se podíváme na to, jak sloty fungují, jaký je jejich vztah ke komponentám a jak je efektivně využívat při tvorbě flexibilních a dynamických webů." property="twitter:description"/><meta content="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots.png" property="twitter:image"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="google-site-verification=KWdtytYMs3PkSrms0xFPAXvueZNqFdlUPUrS2wPYAD8" name="google-site-verification"/><link href="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/css/antoninbures-cz.webflow.cc1b0fd47.min.css" rel="stylesheet" type="text/css"/><script src="https://use.typekit.net/qat6myk.js" type="text/javascript"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/6749ad147621a5b2b20ae5de_favicon-small.jpg" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/6749acc09d889201458c9c0f_favicon.jpg" rel="apple-touch-icon"/><!-- Finsweet Cookie Consent -->
-<script async src="https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js" fs-cc-mode="opt-out" fs-cc-debug="false"></script>
-<script async src="https://tally.so/widgets/embed.js"></script></head><body><div class="w-embed w-script"><!-- Google tag (gtag.js) -->
-<script async type="fs-cc" src="https://www.googletagmanager.com/gtag/js?id=G-M4FZRWWZV4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Webflow Slots: Jak fungují a k čemu slouží v komponentovém systému?
+    </title>
+    <meta
+      content="Při tvorbě webových stránek ve Webflow se setkáte s možností vytvářet opakovaně použitelné komponenty (components) a do nich vkládat různé prvky, které vám umožní snadnou úpravu obsahu. Důležitým prvkem tohoto systému, který nedávno přibyl, jsou sloty, v originále Slot – místo v komponentě, kam můžete vkládat jiné, předem vytvořené komponenty. V tomto článku se podíváme na to, jak sloty fungují, jaký je jejich vztah ke komponentám a jak je efektivně využívat při tvorbě flexibilních a dynamických webů."
+      name="description"
+    />
+    <meta
+      content="Webflow Slots: Jak fungují a k čemu slouží v komponentovém systému?"
+      property="og:title"
+    />
+    <meta
+      content="Při tvorbě webových stránek ve Webflow se setkáte s možností vytvářet opakovaně použitelné komponenty (components) a do nich vkládat různé prvky, které vám umožní snadnou úpravu obsahu. Důležitým prvkem tohoto systému, který nedávno přibyl, jsou sloty, v originále Slot – místo v komponentě, kam můžete vkládat jiné, předem vytvořené komponenty. V tomto článku se podíváme na to, jak sloty fungují, jaký je jejich vztah ke komponentám a jak je efektivně využívat při tvorbě flexibilních a dynamických webů."
+      property="og:description"
+    />
+    <meta
+      content="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots.png"
+      property="og:image"
+    />
+    <meta
+      content="Webflow Slots: Jak fungují a k čemu slouží v komponentovém systému?"
+      property="twitter:title"
+    />
+    <meta
+      content="Při tvorbě webových stránek ve Webflow se setkáte s možností vytvářet opakovaně použitelné komponenty (components) a do nich vkládat různé prvky, které vám umožní snadnou úpravu obsahu. Důležitým prvkem tohoto systému, který nedávno přibyl, jsou sloty, v originále Slot – místo v komponentě, kam můžete vkládat jiné, předem vytvořené komponenty. V tomto článku se podíváme na to, jak sloty fungují, jaký je jejich vztah ke komponentám a jak je efektivně využívat při tvorbě flexibilních a dynamických webů."
+      property="twitter:description"
+    />
+    <meta
+      content="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots.png"
+      property="twitter:image"
+    />
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="google-site-verification=KWdtytYMs3PkSrms0xFPAXvueZNqFdlUPUrS2wPYAD8"
+      name="google-site-verification"
+    />
+    <link
+      href="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/css/antoninbures-cz.webflow.cc1b0fd47.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script type="text/javascript">
+      !(function (o, c) {
+        var n = c.documentElement,
+          t = " w-mod-";
+        (n.className += t + "js"),
+          ("ontouchstart" in o ||
+            (o.DocumentTouch && c instanceof DocumentTouch)) &&
+            (n.className += t + "touch");
+      })(window, document);
+    </script>
+    <link
+      href="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/6749ad147621a5b2b20ae5de_favicon-small.jpg"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/6749acc09d889201458c9c0f_favicon.jpg"
+      rel="apple-touch-icon"
+    />
+    <script async src="https://tally.so/widgets/embed.js"></script>
+  </head>
+  <body>
+    <div class="w-embed w-script">
+      <!-- Google tag (gtag.js) -->
+      <script
+        async
+        type="fs-cc"
+        src="https://www.googletagmanager.com/gtag/js?id=G-M4FZRWWZV4"
+      ></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-  gtag('config', 'G-M4FZRWWZV4');
-</script></div><div class="page-wrapper"><div data-w-id="05c5a01a-60ec-5dff-3a03-bfe29862b042" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="header w-nav"><div class="padding-global"><div class="container-large w-container"><div class="header_row"><a href="https://www.antoninbures.com/" class="header_logo"><span class="text-weight-xbold">Tony</span>Bures</a><nav role="navigation" class="header_nav w-nav-menu"><div class="header_nav_group is-main-menu"><a href="https://www.antoninbures.com/blog" class="header_nav_item w-nav-link">Tonyho flow</a><a href="https://www.antoninbures.com/cenik" class="header_nav_item w-nav-link">Ceník</a><a href="https://www.antoninbures.com/kontakt" class="header_nav_item w-nav-link">Kontakt</a></div><div class="header_nav_group is-cta-menu"><a typ="button" data-wf--button--variant="square" href="https://www.linkedin.com/in/antoninbures/" target="_blank" class="button w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4 w-inline-block"><div class="icon-height-medium w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4 w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="1.5"> <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path> <path d="M8 11l0 5"></path> <path d="M8 8l0 .01"></path> <path d="M12 16l0 -5"></path> <path d="M16 16v-3a2 2 0 0 0 -4 0"></path> </svg></div><div class="button_label w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4"></div></a><a typ="button" data-wf--button--variant="base" href="https://www.antoninbures.com/kontakt" class="button w-inline-block"><div class="button_label">Pojďme to probrat</div></a></div></nav><div class="menu-button w-nav-button"><div class="w-icon-nav-menu"></div></div></div></div></div></div><div class="global-styles w-embed"><style>
+        gtag("config", "G-M4FZRWWZV4");
+      </script>
+    </div>
+    <div class="page-wrapper">
+      <div
+        data-w-id="05c5a01a-60ec-5dff-3a03-bfe29862b042"
+        data-animation="default"
+        data-collapse="medium"
+        data-duration="400"
+        data-easing="ease"
+        data-easing2="ease"
+        role="banner"
+        class="header w-nav"
+      >
+        <div class="padding-global">
+          <div class="container-large w-container">
+            <div class="header_row">
+              <a href="https://www.antoninbures.com/" class="header_logo"
+                ><span class="text-weight-xbold">Tony</span>Bures</a
+              >
+              <nav role="navigation" class="header_nav w-nav-menu">
+                <div class="header_nav_group is-main-menu">
+                  <a
+                    href="https://www.antoninbures.com/blog"
+                    class="header_nav_item w-nav-link"
+                    >Tonyho flow</a
+                  ><a
+                    href="https://www.antoninbures.com/cenik"
+                    class="header_nav_item w-nav-link"
+                    >Ceník</a
+                  ><a
+                    href="https://www.antoninbures.com/kontakt"
+                    class="header_nav_item w-nav-link"
+                    >Kontakt</a
+                  >
+                </div>
+                <div class="header_nav_group is-cta-menu">
+                  <a
+                    typ="button"
+                    data-wf--button--variant="square"
+                    href="https://www.linkedin.com/in/antoninbures/"
+                    target="_blank"
+                    class="button w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4 w-inline-block"
+                    ><div
+                      class="icon-height-medium w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4 w-embed"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="24"
+                        height="24"
+                        stroke-width="1.5"
+                      >
+                        <path
+                          d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+                        ></path>
+                        <path d="M8 11l0 5"></path>
+                        <path d="M8 8l0 .01"></path>
+                        <path d="M12 16l0 -5"></path>
+                        <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                      </svg>
+                    </div>
+                    <div
+                      class="button_label w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4"
+                    ></div></a
+                  ><a
+                    typ="button"
+                    data-wf--button--variant="base"
+                    href="https://www.antoninbures.com/kontakt"
+                    class="button w-inline-block"
+                    ><div class="button_label">Pojďme to probrat</div></a
+                  >
+                </div>
+              </nav>
+              <div class="menu-button w-nav-button">
+                <div class="w-icon-nav-menu"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="global-styles w-embed">
+        <style>
+          html {
+            font-size: 16px;
+          }
 
-html {
-	font-size: 16px;
-}
+          /* Make text look crisper and more legible in all browsers */
+          body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+          }
 
-/* Make text look crisper and more legible in all browsers */
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+          /* Focus state style for keyboard navigation for the focusable elements */
+          *[tabindex]:focus-visible,
+          input[type="file"]:focus-visible {
+            outline: 0.125rem solid #4d65ff;
+            outline-offset: 0.125rem;
+          }
 
-/* Focus state style for keyboard navigation for the focusable elements */
-*[tabindex]:focus-visible,
-  input[type="file"]:focus-visible {
-   outline: 0.125rem solid #4d65ff;
-   outline-offset: 0.125rem;
-}
+          /* Set color style to inherit */
+          .inherit-color * {
+            color: inherit;
+          }
 
-/* Set color style to inherit */
-.inherit-color * {
-    color: inherit;
-}
+          /* Get rid of top margin on first element in any rich text element */
+          .w-richtext > :not(div):first-child,
+          .w-richtext > div:first-child > :first-child {
+            margin-top: 0 !important;
+          }
 
-/* Get rid of top margin on first element in any rich text element */
-.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
-  margin-top: 0 !important;
-}
+          /* Get rid of bottom margin on last element in any rich text element */
+          .w-richtext > :last-child,
+          .w-richtext ol li:last-child,
+          .w-richtext ul li:last-child {
+            margin-bottom: 0 !important;
+          }
 
-/* Get rid of bottom margin on last element in any rich text element */
-.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
-	margin-bottom: 0 !important;
-}
+          /* Get rid of top margin on first element in any rich text element */
+          .w-richtext.text-size-medium > p {
+            font-size: 1.125rem;
+          }
 
-/* Get rid of top margin on first element in any rich text element */
-.w-richtext.text-size-medium > p {
-  font-size: 1.125rem;
-}
+          @media screen and (max-width: 768px) {
+            .w-richtext.text-size-medium > p {
+              font-size: 1rem;
+            }
+          }
 
-@media screen and (max-width: 768px) {
-	.w-richtext.text-size-medium > p {
-    font-size: 1rem;
-  }
-}
+          /* Make sure containers never lose their center alignment */
+          .container-medium,
+          .container-small,
+          .container-large {
+            margin-right: auto !important;
+            margin-left: auto !important;
+          }
 
-
-/* Make sure containers never lose their center alignment */
-.container-medium,.container-small, .container-large {
-	margin-right: auto !important;
-  margin-left: auto !important;
-}
-
-/* 
+          /* 
 Make the following elements inherit typography styles from the parent and not have hardcoded values. 
 Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
 Uncomment this CSS to use it in the project. Leave this message for future hand-off.
 */
-/*
+          /*
 a,
 .w-input,
 .w-select,
@@ -82,130 +244,131 @@ a,
 }
 */
 
-/* Apply "..." after 3 lines of text */
-.text-style-3lines {
-	display: -webkit-box;
-	overflow: hidden;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-}
+          /* Apply "..." after 3 lines of text */
+          .text-style-3lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+          }
 
-/* Apply "..." after 2 lines of text */
-.text-style-2lines {
-	display: -webkit-box;
-	overflow: hidden;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
-}
+          /* Apply "..." after 2 lines of text */
+          .text-style-2lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
 
-/* Adds inline flex display */
-.display-inlineflex {
-  display: inline-flex;
-}
+          /* Adds inline flex display */
+          .display-inlineflex {
+            display: inline-flex;
+          }
 
-/* These classes are never overwritten */
-.hide {
-  display: none !important;
-}
+          /* These classes are never overwritten */
+          .hide {
+            display: none !important;
+          }
 
-@media screen and (max-width: 991px) {
-    .hide, .hide-tablet {
-        display: none !important;
-    }
-}
-  @media screen and (max-width: 767px) {
-    .hide-mobile-landscape{
-      display: none !important;
-    }
-}
-  @media screen and (max-width: 479px) {
-    .hide-mobile{
-      display: none !important;
-    }
-}
- 
-.margin-0 {
-  margin: 0rem !important;
-}
-  
-.padding-0 {
-  padding: 0rem !important;
-}
+          @media screen and (max-width: 991px) {
+            .hide,
+            .hide-tablet {
+              display: none !important;
+            }
+          }
+          @media screen and (max-width: 767px) {
+            .hide-mobile-landscape {
+              display: none !important;
+            }
+          }
+          @media screen and (max-width: 479px) {
+            .hide-mobile {
+              display: none !important;
+            }
+          }
 
-.spacing-clean {
-padding: 0rem !important;
-margin: 0rem !important;
-}
+          .margin-0 {
+            margin: 0rem !important;
+          }
 
-.margin-top {
-  margin-right: 0rem !important;
-  margin-bottom: 0rem !important;
-  margin-left: 0rem !important;
-}
+          .padding-0 {
+            padding: 0rem !important;
+          }
 
-.padding-top {
-  padding-right: 0rem !important;
-  padding-bottom: 0rem !important;
-  padding-left: 0rem !important;
-}
-  
-.margin-right {
-  margin-top: 0rem !important;
-  margin-bottom: 0rem !important;
-  margin-left: 0rem !important;
-}
+          .spacing-clean {
+            padding: 0rem !important;
+            margin: 0rem !important;
+          }
 
-.padding-right {
-  padding-top: 0rem !important;
-  padding-bottom: 0rem !important;
-  padding-left: 0rem !important;
-}
+          .margin-top {
+            margin-right: 0rem !important;
+            margin-bottom: 0rem !important;
+            margin-left: 0rem !important;
+          }
 
-.margin-bottom {
-  margin-top: 0rem !important;
-  margin-right: 0rem !important;
-  margin-left: 0rem !important;
-}
+          .padding-top {
+            padding-right: 0rem !important;
+            padding-bottom: 0rem !important;
+            padding-left: 0rem !important;
+          }
 
-.padding-bottom {
-  padding-top: 0rem !important;
-  padding-right: 0rem !important;
-  padding-left: 0rem !important;
-}
+          .margin-right {
+            margin-top: 0rem !important;
+            margin-bottom: 0rem !important;
+            margin-left: 0rem !important;
+          }
 
-.margin-left {
-  margin-top: 0rem !important;
-  margin-right: 0rem !important;
-  margin-bottom: 0rem !important;
-}
-  
-.padding-left {
-  padding-top: 0rem !important;
-  padding-right: 0rem !important;
-  padding-bottom: 0rem !important;
-}
-  
-.margin-horizontal {
-  margin-top: 0rem !important;
-  margin-bottom: 0rem !important;
-}
+          .padding-right {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+            padding-left: 0rem !important;
+          }
 
-.padding-horizontal {
-  padding-top: 0rem !important;
-  padding-bottom: 0rem !important;
-}
+          .margin-bottom {
+            margin-top: 0rem !important;
+            margin-right: 0rem !important;
+            margin-left: 0rem !important;
+          }
 
-.margin-vertical {
-  margin-right: 0rem !important;
-  margin-left: 0rem !important;
-}
-  
-.padding-vertical {
-  padding-right: 0rem !important;
-  padding-left: 0rem !important;
-}
+          .padding-bottom {
+            padding-top: 0rem !important;
+            padding-right: 0rem !important;
+            padding-left: 0rem !important;
+          }
 
-/*
+          .margin-left {
+            margin-top: 0rem !important;
+            margin-right: 0rem !important;
+            margin-bottom: 0rem !important;
+          }
+
+          .padding-left {
+            padding-top: 0rem !important;
+            padding-right: 0rem !important;
+            padding-bottom: 0rem !important;
+          }
+
+          .margin-horizontal {
+            margin-top: 0rem !important;
+            margin-bottom: 0rem !important;
+          }
+
+          .padding-horizontal {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+          }
+
+          .margin-vertical {
+            margin-right: 0rem !important;
+            margin-left: 0rem !important;
+          }
+
+          .padding-vertical {
+            padding-right: 0rem !important;
+            padding-left: 0rem !important;
+          }
+
+          /*
 @media screen and (min-width:992px) {
 	.service-grid_item:first-child {
     grid-column: 1 / span 4;
@@ -237,124 +400,761 @@ margin: 0rem !important;
     -webkit-mask-position: center;
 }
 */
-.hero_photo_image:not(.bigger) {
-    -webkit-mask-image: url(https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671f7db0fe88132c24ce6127_Vector.svg);
-    mask-image: url(https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671f7db0fe88132c24ce6127_Vector.svg);
-    -webkit-mask-size: 100%;
-    mask-size: 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-}
+          .hero_photo_image:not(.bigger) {
+            -webkit-mask-image: url(https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671f7db0fe88132c24ce6127_Vector.svg);
+            mask-image: url(https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671f7db0fe88132c24ce6127_Vector.svg);
+            -webkit-mask-size: 100%;
+            mask-size: 100%;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+          }
 
-.is-full-clicked:after {
-	position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height: 100%;
-  content: "";
-  cursor: pointer;
-  z-index: 3;
-}
+          .is-full-clicked:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            cursor: pointer;
+            z-index: 3;
+          }
 
-.benefit-list ul {
-  padding-left: 1rem;
-}
+          .benefit-list ul {
+            padding-left: 1rem;
+          }
 
-.benefit-list li {
-  padding-left: 0.75rem;
-  margin-bottom: 1rem
-}
+          .benefit-list li {
+            padding-left: 0.75rem;
+            margin-bottom: 1rem;
+          }
 
-.benefit-list li:last-child {
-  margin-bottom: 0
-}
+          .benefit-list li:last-child {
+            margin-bottom: 0;
+          }
 
-.benefit-list li::marker {
-  content: '✅'; 
-}
+          .benefit-list li::marker {
+            content: "✅";
+          }
 
-.form_radio-icon:checked ~ .form_radio-label {
-	background: var(--brand);
-  color: var(--surface-lowest)
-}
+          .form_radio-icon:checked ~ .form_radio-label {
+            background: var(--brand);
+            color: var(--surface-lowest);
+          }
 
-.cooperation-list > div:last-child .cooperation-list_item_content {
-	padding-bottom:0
-}
+          .cooperation-list > div:last-child .cooperation-list_item_content {
+            padding-bottom: 0;
+          }
 
-.cooperation-list > div:last-child .cooperation-line {
-	display:none
-}
+          .cooperation-list > div:last-child .cooperation-line {
+            display: none;
+          }
 
-table {
-	border:0;
-}
+          table {
+            border: 0;
+          }
 
-table td,
-table th {
-	border-top:0;
-  border-left:0;
-  border-right:0;
-  border-color: var(--border-variant);
-  padding: 0.25rem 1rem;
-  font-size: 0.85rem;
-}
+          table td,
+          table th {
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            border-color: var(--border-variant);
+            padding: 0.25rem 1rem;
+            font-size: 0.85rem;
+          }
 
-table tbody tr:last-child td {
-	border:0;
-}
+          table tbody tr:last-child td {
+            border: 0;
+          }
 
-table thead tr th:first-child,
-table tbody tr td:first-child {
-	text-align: left;
-}
+          table thead tr th:first-child,
+          table tbody tr td:first-child {
+            text-align: left;
+          }
 
-.box.is-service:after {
-	--tile-gradient-angle: 0deg;
-  content: "";
-  opacity: 0;
-  position: absolute;
-  height: calc(100% - 4px);
-  width: calc(100% - 4px);
-  top: 0;
-  left: 0;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  border: solid 2px transparent;
-  animation-name: box-border-tile-border-rotate;
-  animation-iteration-count: infinite;
-  animation-duration: 2.25s;
-  animation-timing-function: ease-in;
-  transition: all ease-in-out .25s;
-  background: conic-gradient(from var(--tile-gradient-angle), #EE1F5C, #FFB700, #FF98CB, #EE1F5C) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-}
+          .box.is-service:after {
+            --tile-gradient-angle: 0deg;
+            content: "";
+            opacity: 0;
+            position: absolute;
+            height: calc(100% - 4px);
+            width: calc(100% - 4px);
+            top: 0;
+            left: 0;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            border: solid 2px transparent;
+            animation-name: box-border-tile-border-rotate;
+            animation-iteration-count: infinite;
+            animation-duration: 2.25s;
+            animation-timing-function: ease-in;
+            transition: all ease-in-out 0.25s;
+            background: conic-gradient(
+                from var(--tile-gradient-angle),
+                #ee1f5c,
+                #ffb700,
+                #ff98cb,
+                #ee1f5c
+              )
+              border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+              linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box,
+              linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+          }
 
-@keyframes box-border-tile-border-rotate {
-    from {
-        --tile-gradient-angle: 0deg
-    }
+          @keyframes box-border-tile-border-rotate {
+            from {
+              --tile-gradient-angle: 0deg;
+            }
 
-    to {
-        --tile-gradient-angle: 360deg
-    }
-}
+            to {
+              --tile-gradient-angle: 360deg;
+            }
+          }
 
-
-.box.is-service:hover:after {
-	opacity: 1;
-}
-
-
-
-</style></div><main class="main-wrapper"><header class="section without-border"><div class="padding-global padding-section-medium"><div class="w-layout-blockcontainer container-large w-container"><div class="row is-justify-center"><div class="col col_8"><div class="section-title is-center padding-0"><div><div class="margin-bottom margin-medium w-dyn-list"><div role="list" class="button-group is-justify-center w-dyn-items"><div role="listitem" class="pill w-dyn-item"><div>Webflow</div></div></div></div></div><p class="text-size-small">24.9.2024</p><p class="text-size-small w-condition-invisible">31.10.2024</p><h1 words-slide-up="" text-split="">Webflow Slots: Jak fungují a k čemu slouží v komponentovém systému?</h1><p>Při tvorbě webových stránek ve Webflow se setkáte s možností vytvářet opakovaně použitelné komponenty (components) a do nich vkládat různé prvky, které vám umožní snadnou úpravu obsahu. Důležitým prvkem tohoto systému, který nedávno přibyl, jsou sloty, v originále Slot – místo v komponentě, kam můžete vkládat jiné, předem vytvořené komponenty. V tomto článku se podíváme na to, jak sloty fungují, jaký je jejich vztah ke komponentám a jak je efektivně využívat při tvorbě flexibilních a dynamických webů.</p></div></div></div></div></div></header><section class="section without-border"><div class="padding-global"><div class="w-layout-blockcontainer container-large w-container"><div class="row is-justify-center"><div class="col col_8"><div class="margin-bottom margin-large"><img src="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots.png" loading="lazy" alt="" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, (max-width: 1279px) 62vw, (max-width: 1919px) 63vw, 853.328125px" srcset="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-500.png 500w, https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-800.png 800w, https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-1080.png 1080w, https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-1600.png 1600w, https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-2000.png 2000w, https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-2600.png 2600w, https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots.png 2912w" class="blog-image"/></div></div></div></div></div></section><section class="section"><div class="padding-global"><div class="w-layout-blockcontainer container-large w-container"><div class="row is-justify-center"><div class="col col_8"><div class="w-richtext"><p>Při tvorbě webových stránek ve Webflow se setkáte s možností vytvářet opakovaně použitelné komponenty (<a target="_self" href="https://university.webflow.com/lesson/components?topics=layout-design">components</a>) a do nich vkládat různé prvky, které vám umožní snadnou úpravu obsahu. Důležitým prvkem tohoto systému, který nedávno přibyl, jsou sloty, v originále <a target="_self" href="https://webflow.com/updates/component-slots">Slot</a> – místo v komponentě, kam můžete vkládat jiné, předem vytvořené komponenty. V tomto článku se podíváme na to, jak sloty fungují, jaký je jejich vztah ke komponentám a jak je efektivně využívat při tvorbě flexibilních a dynamických webů.</p><h2>Co jsou komponenty v Webflow?</h2><p>Komponenta je jakýkoliv předem definovaný prvek nebo blok na stránce, který můžete opakovaně používat na různých místech webu. Typickou komponentou může být například:</p><ul role="list"><li><strong>Sekce s nadpisem</strong> – obsahuje nadpis, odstavec textu a CTA tlačítko.</li><li><strong>Galerie</strong> – sestava obrázků s možností zvětšení detailu.</li><li><strong>Karta produktu</strong> – box s obrázkem produktu, název, popisem a CTA tlačítkem.</li></ul><p>Každá komponenta může mít různé vlastnosti a umožňuje flexibilní úpravy. Například u sekce s nadpisem můžete měnit samotný text nadpisu, přidat či odebrat odstavec textu nebo změnit odkaz tlačítka, aniž byste museli znovu navrhovat celý prvek. Komponenty tak šetří čas a zároveň zajišťují konzistenci napříč celým webem.</p><figure class="w-richtext-align-center w-richtext-figure-type-image"><div><img src="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5acfefd4306676d2f2e_1727009470068.png" alt="" loading="lazy"/></div><figcaption>Webflow Components</figcaption></figure><h2>Co jsou sloty?</h2><p><strong>Sloty</strong> jsou specifická místa uvnitř komponent, která umožňují vložení jiných komponent. Tato funkce vám umožňuje vytvářet složitější a dynamické rozvržení stránek. Namísto toho, abyste byli omezeni na jeden druh obsahu uvnitř komponenty, můžete pomocí slotů vkládat různé komponenty, což vám dává větší kontrolu nad rozvržením a flexibilitou webu.</p><h3>Příklad</h3><p>Představte si, že máte komponentu s <strong>dvousloupcovým rozložením</strong>. Každý sloupec má svůj <strong>slot</strong>. Do jednoho sloupce můžete vložit komponentu se sekcí s nadpisem, zatímco do druhého sloupce můžete vložit například komponentu galerie. Toto rozdělení umožňuje, aby stejný layout (dvousloupcová struktura) sloužil pro různé druhy obsahu.</p><figure class="w-richtext-align-center w-richtext-figure-type-image"><div><img src="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5ac79fab7c2909a5ab0_1727009469995.png" alt="" loading="lazy"/></div><figcaption>Slot je viditelný pouze ve chvíli, kdy edituji komponentu.</figcaption></figure><h2>Proč chcete používat sloty?</h2><h3>Flexibilní kombinace obsahu</h3><p>Díky slotům můžete kombinovat různé typy obsahu uvnitř jedné, či více základních struktur. Například můžete mít již zmiňovaný dvousloupcový layout, který na jedné stránce obsahuje text a galerii, zatímco na jiné stránce obsahuje video a karusel obrázků. To vše bez nutnosti vytvářet nový layout pokaždé, když se změní obsah.</p><h3>Opakované použití layoutů</h3><p>Jednou z hlavních výhod slotů je možnost vytvářet komponenty s univerzálním layoutem, který můžete znovu a znovu používat s různým obsahem. Nestane se vám pak to, že na jedné stránce bude mít sekce padding například 5rem a na druhé omylem 7rem. Díky využití kombinace komponent a slotů bude celý web konzistentní a efektivní pro případné změny napříč celým webem.</p><h3>Efektivní správa složitých stránek</h3><p>Pokud pracujete na rozsáhlém webu s mnoha různými prvky, sloty vám umožní lépe organizovat a spravovat strukturu stránek. Základní komponenty s definovanými sloty lze použít k vytvoření složitých rozvržení, kde si můžete snadno zvolit, jaký typ obsahu chcete zobrazit na různých částech stránky.</p><h2>Jak fungují sloty a komponenty v praxi?</h2><h3>Vytvoření základní komponenty</h3><p>Začněte návrhem komponenty, která může sloužit jako základní rozvržení – například dvousloupcový layout. Využijeme princip pojmenování tříd z Bootstrapu. Z elementů vybereme DIV a třídu pojmenujeme .row a nastavíme Display Flex. Do tohoto divu vložíme další DIV a pojmenujeme jej .col a nastavíme width na 100%. Tento DIV duplikujeme na stejné úrovni, tj. uvnitř .row. Pravým tlačítkem na .row vybereme z kontextového menu Create component a komponentu pojmenujeme například row-2-column.</p><h3>Definování slotů v komponentě</h3><p>Když máte vytvořenou komponentu s layoutem, můžete určit, které části komponenty budou sloužit jako sloty. Z nabídky elementů vybereme <strong>Slot</strong> a umístíme do .col DIVu. Do každého jeden. Každý slot můžeme pojmenovat jak budeme chtít. Jakmile máme hotovo, očistíme editační mód komponenty.</p><h3>Vložení komponent do slotů</h3><p>Jakmile jsou sloty definovány, můžete do nich vložit různé komponenty. Například do jednoho sloupce layoutu můžete vložit sekci s nadpisem a do druhého galerii obrázků. Díky této flexibilitě můžete jeden layout využít pro různé situace a obsah.</p><p>V době psaní článku lze do slotů vkládat pouze jiné komponenty. Věřím, že se to do budoucna změní a Webflow přidá i podporu pro i pro obyčejné elementy.</p><h2>Závěr</h2><p>Sloty jsou důležitým nástrojem při tvorbě flexibilních webových stránek. Při jejich použití máte prakticky neomezené možnosti jak v jedné komponentě kombinovat různé typy obsahu při zachování konzistentnosti. Modularita je klíčem k rychlým úpravám napříč celým webem. Ušetřené peníze za úpravy už je pak jen taková třešnička na závěr.</p><p>‍</p></div><div class="spacer-xhuge"></div></div></div></div></div></section><footer id="cta" class="section_footer"><div class="padding-global padding-section-medium"><div class="w-layout-blockcontainer container-large w-container"><div class="row is-gap-large"><div class="col col_6"><p class="margin-top margin-small">Soustředím se na kreativní design uživatelsky orientovaných webů ve Webflow, které nejen esteticky zaujmou, ale také pomáhají obchodnímu úspěchu. Vytvořím digitální řešení, která přispívají k měřitelným výsledkům.</p><div class="avatar-row padding-right padding-medium"><div class="avatar margin-vertical margin-small"><div class="avatar_photo-wrapper"><img src="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3).avif" loading="lazy" sizes="48px" srcset="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3)-p-500.avif 500w, https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3)-p-800.avif 800w, https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3)-p-1080.avif 1080w, https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3)-p-1600.avif 1600w, https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3)-p-2000.avif 2000w, https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3).avif 3265w" alt="tony"/></div><div class="avatar_content"><p class="text-weight-semibold margin-0">Tony Bureš</p><p class="text-size-small margin-0">Na volné noze od roku 2013.</p></div></div><div class="button-group"><a typ="button" data-wf--button--variant="square" href="https://www.linkedin.com/in/antoninbures/" target="_blank" class="button w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4 w-inline-block"><div class="icon-height-medium w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4 w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="1.5"> <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path> <path d="M8 11l0 5"></path> <path d="M8 8l0 .01"></path> <path d="M12 16l0 -5"></path> <path d="M16 16v-3a2 2 0 0 0 -4 0"></path> </svg></div><div class="button_label w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4">Napište mi</div></a></div></div></div><div class="col col_6"><h3 class="margin-top margin-small heading-style-h4">Firemní údaje</h3><p class="margin-top margin-small">Antonín Bureš<br/>Rozsochy 96, 592 57</p><p>IČ: 02035138<br/>DIČ: CZ686100966 <span class="text-size-small">(jsem plátce DPH)</span></p><p class="text-weight-medium">Bankovní spojení</p><p>Číslo účtu: 5600712063/0800<br/>IBAN: CZ90 0800 0000 0056 0071 2063</p><p class="text-size-small">Fyzická osoba zapsaná v Živnostenském rejstříku od 26.08.2013 — Městský úřad Bystřice nad Pernštejnem</p></div><div class="col col_6"><h3 class="margin-top margin-small heading-style-h4">Menu</h3><ul role="list" class="footer_menu-list w-list-unstyled"><li><a href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#">Služby</a></li><li><a href="https://www.antoninbures.com/blog">Blog</a></li><li><a href="https://www.antoninbures.com/kontakt">Kontakt</a></li><li fs-cc="manager"><a href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#" fs-cc="open-preferences" aria-label="Cookie Preferences">Nastavení cookies</a></li></ul></div></div></div></div></footer></main></div><div><div fs-cc-scroll="disable" fs-cc="preferences" class="fs-cc-prefs2_component"><div class="fs-cc-prefs2_form-wrapper w-form"><form id="cookie-preferences" name="wf-form-Cookie-Preferences" data-name="Cookie Preferences" method="get" class="fs-cc-prefs2_form" data-wf-page-id="671cb4f281ae6642a907ef41" data-wf-element-id="b02edc9e-2410-42ae-85ce-66e3388c4e1c" data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e"><div fs-cc="close" class="fs-cc-prefs2_close"><div class="fs-cc-preferences2_close-icon w-embed"><svg fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 16 16">
-	<path d="M9.414 8l4.293-4.293-1.414-1.414L8 6.586 3.707 2.293 2.293 3.707 6.586 8l-4.293 4.293 1.414 1.414L8 9.414l4.293 4.293 1.414-1.414L9.414 8z"></path>
-</svg></div></div><div class="fs-cc-prefs2_content"><div class="fs-cc-prefs2_space-small"><div class="heading-style-h3">Nastavení cookies</div></div><div class="fs-cc-prefs2_option"><div class="fs-cc-prefs2_toggle-wrapper"><div class="fs-cc-prefs2_checkbox-field"><input type="checkbox" disabled="" Name="Nutne" class="fs-cc-prefs2_checkbox" checked=""/><div class="fs-cc-prefs2_checkbox-label">Nutné soubory cookie</div></div><div class="w-layout-vflex"><p class="text-weight-bold">Nezbytně nutné cookies</p><p>Tyto soubory cookies jsou nezbytné pro správné fungování webových stránek. Bez těchto cookies by web nefungoval správně.</p></div></div></div><div class="fs-cc-prefs2_option hide"><div class="fs-cc-prefs2_toggle-wrapper"><div class="fs-cc-prefs2_label">Marketingové soubory cookie</div><label class="w-checkbox fs-cc-prefs2_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom fs-cc-prefs2_checkbox"></div><input type="checkbox" name="marketing-2" id="marketing-2" data-name="Marketing 2" fs-cc-checkbox="marketing" style="opacity:0;position:absolute;z-index:-1"/><span for="marketing-2" class="fs-cc-prefs2_checkbox-label w-form-label">Essential</span></label></div></div><div class="fs-cc-prefs2_option hide"><div class="fs-cc-prefs2_toggle-wrapper"><div class="fs-cc-prefs2_label">Personalizované soubory cookie</div><label class="w-checkbox fs-cc-prefs2_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom fs-cc-prefs2_checkbox"></div><input type="checkbox" name="personalization-2" id="personalization-2" data-name="Personalization 2" fs-cc-checkbox="personalization" style="opacity:0;position:absolute;z-index:-1"/><span for="personalization-2" class="fs-cc-prefs2_checkbox-label w-form-label">Essential</span></label></div></div><div class="fs-cc-prefs2_option"><div class="fs-cc-prefs2_toggle-wrapper"><label class="w-checkbox fs-cc-prefs2_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom fs-cc-prefs2_checkbox"></div><input type="checkbox" name="analytics-2" id="analytics" data-name="Analytics 2" fs-cc-checkbox="analytics" style="opacity:0;position:absolute;z-index:-1"/><span for="analytics-2" class="fs-cc-prefs2_checkbox-label w-form-label">Essential</span></label><div class="w-layout-vflex"><p class="text-weight-bold">Výkonnostní a analytické soubory cookies</p><p>Analytické soubory cookies nám pomáhají vylepšovat naše webové stránky shromažďováním informací a podáváním zpráv o jeho používání. Jedná se o cookies Google Analytics.</p></div></div></div><div class="fs-cc-prefs2_option"><div class="fs-cc-prefs2_toggle-wrapper"><label class="w-checkbox fs-cc-prefs2_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom fs-cc-prefs2_checkbox"></div><input type="checkbox" name="analytics-2" id="analytics-2" data-name="Analytics 2" fs-cc-checkbox="marketing" style="opacity:0;position:absolute;z-index:-1"/><span for="analytics-2" class="fs-cc-prefs2_checkbox-label w-form-label">Essential</span></label><div class="w-layout-vflex"><p class="text-weight-bold">Soubory cookies pro reklamu a cílení</p><p>Tyto soubory cookies shromažďují informace o tom, jak web používáte, které stránky jste navštívili a na které odkazy jste klikli. Všechna data jsou anonymizována a nelze je použít k vaší identifikaci. Jedná se o cookies Facebook pixel a Ecomail.</p></div></div></div><div class="fs-cc-prefs2_buttons-wrapper"><a fs-cc="submit" href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#" class="button w-inline-block"><div>Uložit nastavení</div></a><a fs-cc="allow" href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#" class="button w-button">Povolit vše</a><a fs-cc="deny" href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#" class="button is-secondary w-button">Zakázat vše</a></div></div></form><div class="w-form-done"></div><div class="w-form-fail"></div><div fs-cc="close" class="fs-cc-prefs2_overlay"></div></div></div><div fs-cc="banner" class="fs-cc-banner2_component"><div class="fs-cc-banner2_container"><h3 class="heading-style-h4 margin-bottom margin-small">Nastavení cookies na této stránce</h3><p class="text-size-small margin-0">Vážení uživatelé, cookies máte ve svých rukou, pro zachování funkčnosti webu pracuji s vašimi soubory cookies, tj. malými soubory, které se ukládají ve vašem prohlížeči. Některé z nich jsou k fungování webu opravdu nezbytné, ale o některých můžete rozhodnout sami. Nechám to na vás.</p><div class="fs-cc-banner2_buttons-wrapper"><div class="button-group is-cookie"><a fs-cc="allow" href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#" class="button is-small w-inline-block"><div>Souhlasím</div></a></div><a fs-cc="open-preferences" href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#" class="button is-link is-small w-inline-block"><div>Upravit nastavení</div></a></div><div fs-cc="close" class="fs-cc-prefs2_close"><div class="fs-cc-preferences2_close-icon w-embed"><svg fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 16 16">
-	<path d="M9.414 8l4.293-4.293-1.414-1.414L8 6.586 3.707 2.293 2.293 3.707 6.586 8l-4.293 4.293 1.414 1.414L8 9.414l4.293 4.293 1.414-1.414L9.414 8z"></path>
-</svg></div></div></div></div></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=602ce80f7ad04e15a3aa545a" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/js/webflow.85b301a3.d6955e4c29206efb.js" type="text/javascript"></script></body></html>
+          .box.is-service:hover:after {
+            opacity: 1;
+          }
+        </style>
+      </div>
+      <main class="main-wrapper">
+        <header class="section without-border">
+          <div class="padding-global padding-section-medium">
+            <div class="w-layout-blockcontainer container-large w-container">
+              <div class="row is-justify-center">
+                <div class="col col_8">
+                  <div class="section-title is-center padding-0">
+                    <div>
+                      <div class="margin-bottom margin-medium w-dyn-list">
+                        <div
+                          role="list"
+                          class="button-group is-justify-center w-dyn-items"
+                        >
+                          <div role="listitem" class="pill w-dyn-item">
+                            <div>Webflow</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="text-size-small">24.9.2024</p>
+                    <p class="text-size-small w-condition-invisible">
+                      31.10.2024
+                    </p>
+                    <h1 words-slide-up="" text-split="">
+                      Webflow Slots: Jak fungují a k čemu slouží v komponentovém
+                      systému?
+                    </h1>
+                    <p>
+                      Při tvorbě webových stránek ve Webflow se setkáte s
+                      možností vytvářet opakovaně použitelné komponenty
+                      (components) a do nich vkládat různé prvky, které vám
+                      umožní snadnou úpravu obsahu. Důležitým prvkem tohoto
+                      systému, který nedávno přibyl, jsou sloty, v originále
+                      Slot – místo v komponentě, kam můžete vkládat jiné, předem
+                      vytvořené komponenty. V tomto článku se podíváme na to,
+                      jak sloty fungují, jaký je jejich vztah ke komponentám a
+                      jak je efektivně využívat při tvorbě flexibilních a
+                      dynamických webů.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <section class="section without-border">
+          <div class="padding-global">
+            <div class="w-layout-blockcontainer container-large w-container">
+              <div class="row is-justify-center">
+                <div class="col col_8">
+                  <div class="margin-bottom margin-large">
+                    <img
+                      src="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots.png"
+                      loading="lazy"
+                      alt=""
+                      sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, (max-width: 1279px) 62vw, (max-width: 1919px) 63vw, 853.328125px"
+                      srcset="
+                        https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-500.png   500w,
+                        https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-800.png   800w,
+                        https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-1080.png 1080w,
+                        https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-1600.png 1600w,
+                        https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-2000.png 2000w,
+                        https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots-p-2600.png 2600w,
+                        https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5f9da801b1e1fabdbd0_Blog_%20Webflow%20Slots.png        2912w
+                      "
+                      class="blog-image"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="padding-global">
+            <div class="w-layout-blockcontainer container-large w-container">
+              <div class="row is-justify-center">
+                <div class="col col_8">
+                  <div class="w-richtext">
+                    <p>
+                      Při tvorbě webových stránek ve Webflow se setkáte s
+                      možností vytvářet opakovaně použitelné komponenty (<a
+                        target="_self"
+                        href="https://university.webflow.com/lesson/components?topics=layout-design"
+                        >components</a
+                      >) a do nich vkládat různé prvky, které vám umožní snadnou
+                      úpravu obsahu. Důležitým prvkem tohoto systému, který
+                      nedávno přibyl, jsou sloty, v originále
+                      <a
+                        target="_self"
+                        href="https://webflow.com/updates/component-slots"
+                        >Slot</a
+                      >
+                      – místo v komponentě, kam můžete vkládat jiné, předem
+                      vytvořené komponenty. V tomto článku se podíváme na to,
+                      jak sloty fungují, jaký je jejich vztah ke komponentám a
+                      jak je efektivně využívat při tvorbě flexibilních a
+                      dynamických webů.
+                    </p>
+                    <h2>Co jsou komponenty v Webflow?</h2>
+                    <p>
+                      Komponenta je jakýkoliv předem definovaný prvek nebo blok
+                      na stránce, který můžete opakovaně používat na různých
+                      místech webu. Typickou komponentou může být například:
+                    </p>
+                    <ul role="list">
+                      <li>
+                        <strong>Sekce s nadpisem</strong> – obsahuje nadpis,
+                        odstavec textu a CTA tlačítko.
+                      </li>
+                      <li>
+                        <strong>Galerie</strong> – sestava obrázků s možností
+                        zvětšení detailu.
+                      </li>
+                      <li>
+                        <strong>Karta produktu</strong> – box s obrázkem
+                        produktu, název, popisem a CTA tlačítkem.
+                      </li>
+                    </ul>
+                    <p>
+                      Každá komponenta může mít různé vlastnosti a umožňuje
+                      flexibilní úpravy. Například u sekce s nadpisem můžete
+                      měnit samotný text nadpisu, přidat či odebrat odstavec
+                      textu nebo změnit odkaz tlačítka, aniž byste museli znovu
+                      navrhovat celý prvek. Komponenty tak šetří čas a zároveň
+                      zajišťují konzistenci napříč celým webem.
+                    </p>
+                    <figure
+                      class="w-richtext-align-center w-richtext-figure-type-image"
+                    >
+                      <div>
+                        <img
+                          src="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5acfefd4306676d2f2e_1727009470068.png"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </div>
+                      <figcaption>Webflow Components</figcaption>
+                    </figure>
+                    <h2>Co jsou sloty?</h2>
+                    <p>
+                      <strong>Sloty</strong> jsou specifická místa uvnitř
+                      komponent, která umožňují vložení jiných komponent. Tato
+                      funkce vám umožňuje vytvářet složitější a dynamické
+                      rozvržení stránek. Namísto toho, abyste byli omezeni na
+                      jeden druh obsahu uvnitř komponenty, můžete pomocí slotů
+                      vkládat různé komponenty, což vám dává větší kontrolu nad
+                      rozvržením a flexibilitou webu.
+                    </p>
+                    <h3>Příklad</h3>
+                    <p>
+                      Představte si, že máte komponentu s
+                      <strong>dvousloupcovým rozložením</strong>. Každý sloupec
+                      má svůj <strong>slot</strong>. Do jednoho sloupce můžete
+                      vložit komponentu se sekcí s nadpisem, zatímco do druhého
+                      sloupce můžete vložit například komponentu galerie. Toto
+                      rozdělení umožňuje, aby stejný layout (dvousloupcová
+                      struktura) sloužil pro různé druhy obsahu.
+                    </p>
+                    <figure
+                      class="w-richtext-align-center w-richtext-figure-type-image"
+                    >
+                      <div>
+                        <img
+                          src="https://cdn.prod.website-files.com/65a275cfa1886c6a35122db5/671cb5ac79fab7c2909a5ab0_1727009469995.png"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </div>
+                      <figcaption>
+                        Slot je viditelný pouze ve chvíli, kdy edituji
+                        komponentu.
+                      </figcaption>
+                    </figure>
+                    <h2>Proč chcete používat sloty?</h2>
+                    <h3>Flexibilní kombinace obsahu</h3>
+                    <p>
+                      Díky slotům můžete kombinovat různé typy obsahu uvnitř
+                      jedné, či více základních struktur. Například můžete mít
+                      již zmiňovaný dvousloupcový layout, který na jedné stránce
+                      obsahuje text a galerii, zatímco na jiné stránce obsahuje
+                      video a karusel obrázků. To vše bez nutnosti vytvářet nový
+                      layout pokaždé, když se změní obsah.
+                    </p>
+                    <h3>Opakované použití layoutů</h3>
+                    <p>
+                      Jednou z hlavních výhod slotů je možnost vytvářet
+                      komponenty s univerzálním layoutem, který můžete znovu a
+                      znovu používat s různým obsahem. Nestane se vám pak to, že
+                      na jedné stránce bude mít sekce padding například 5rem a
+                      na druhé omylem 7rem. Díky využití kombinace komponent a
+                      slotů bude celý web konzistentní a efektivní pro případné
+                      změny napříč celým webem.
+                    </p>
+                    <h3>Efektivní správa složitých stránek</h3>
+                    <p>
+                      Pokud pracujete na rozsáhlém webu s mnoha různými prvky,
+                      sloty vám umožní lépe organizovat a spravovat strukturu
+                      stránek. Základní komponenty s definovanými sloty lze
+                      použít k vytvoření složitých rozvržení, kde si můžete
+                      snadno zvolit, jaký typ obsahu chcete zobrazit na různých
+                      částech stránky.
+                    </p>
+                    <h2>Jak fungují sloty a komponenty v praxi?</h2>
+                    <h3>Vytvoření základní komponenty</h3>
+                    <p>
+                      Začněte návrhem komponenty, která může sloužit jako
+                      základní rozvržení – například dvousloupcový layout.
+                      Využijeme princip pojmenování tříd z Bootstrapu. Z
+                      elementů vybereme DIV a třídu pojmenujeme .row a nastavíme
+                      Display Flex. Do tohoto divu vložíme další DIV a
+                      pojmenujeme jej .col a nastavíme width na 100%. Tento DIV
+                      duplikujeme na stejné úrovni, tj. uvnitř .row. Pravým
+                      tlačítkem na .row vybereme z kontextového menu Create
+                      component a komponentu pojmenujeme například row-2-column.
+                    </p>
+                    <h3>Definování slotů v komponentě</h3>
+                    <p>
+                      Když máte vytvořenou komponentu s layoutem, můžete určit,
+                      které části komponenty budou sloužit jako sloty. Z nabídky
+                      elementů vybereme <strong>Slot</strong> a umístíme do .col
+                      DIVu. Do každého jeden. Každý slot můžeme pojmenovat jak
+                      budeme chtít. Jakmile máme hotovo, očistíme editační mód
+                      komponenty.
+                    </p>
+                    <h3>Vložení komponent do slotů</h3>
+                    <p>
+                      Jakmile jsou sloty definovány, můžete do nich vložit různé
+                      komponenty. Například do jednoho sloupce layoutu můžete
+                      vložit sekci s nadpisem a do druhého galerii obrázků. Díky
+                      této flexibilitě můžete jeden layout využít pro různé
+                      situace a obsah.
+                    </p>
+                    <p>
+                      V době psaní článku lze do slotů vkládat pouze jiné
+                      komponenty. Věřím, že se to do budoucna změní a Webflow
+                      přidá i podporu pro i pro obyčejné elementy.
+                    </p>
+                    <h2>Závěr</h2>
+                    <p>
+                      Sloty jsou důležitým nástrojem při tvorbě flexibilních
+                      webových stránek. Při jejich použití máte prakticky
+                      neomezené možnosti jak v jedné komponentě kombinovat různé
+                      typy obsahu při zachování konzistentnosti. Modularita je
+                      klíčem k rychlým úpravám napříč celým webem. Ušetřené
+                      peníze za úpravy už je pak jen taková třešnička na závěr.
+                    </p>
+                    <p>‍</p>
+                  </div>
+                  <div class="spacer-xhuge"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer id="cta" class="section_footer">
+          <div class="padding-global padding-section-medium">
+            <div class="w-layout-blockcontainer container-large w-container">
+              <div class="row is-gap-large">
+                <div class="col col_6">
+                  <p class="margin-top margin-small">
+                    Soustředím se na kreativní design uživatelsky orientovaných
+                    webů ve Webflow, které nejen esteticky zaujmou, ale také
+                    pomáhají obchodnímu úspěchu. Vytvořím digitální řešení,
+                    která přispívají k měřitelným výsledkům.
+                  </p>
+                  <div class="avatar-row padding-right padding-medium">
+                    <div class="avatar margin-vertical margin-small">
+                      <div class="avatar_photo-wrapper">
+                        <img
+                          src="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3).avif"
+                          loading="lazy"
+                          sizes="48px"
+                          srcset="
+                            https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3)-p-500.avif   500w,
+                            https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3)-p-800.avif   800w,
+                            https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3)-p-1080.avif 1080w,
+                            https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3)-p-1600.avif 1600w,
+                            https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3)-p-2000.avif 2000w,
+                            https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/671ba135a9759bcf5dbde849_DSC_7322-(3).avif        3265w
+                          "
+                          alt="tony"
+                        />
+                      </div>
+                      <div class="avatar_content">
+                        <p class="text-weight-semibold margin-0">Tony Bureš</p>
+                        <p class="text-size-small margin-0">
+                          Na volné noze od roku 2013.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="button-group">
+                      <a
+                        typ="button"
+                        data-wf--button--variant="square"
+                        href="https://www.linkedin.com/in/antoninbures/"
+                        target="_blank"
+                        class="button w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4 w-inline-block"
+                        ><div
+                          class="icon-height-medium w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4 w-embed"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            width="24"
+                            height="24"
+                            stroke-width="1.5"
+                          >
+                            <path
+                              d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+                            ></path>
+                            <path d="M8 11l0 5"></path>
+                            <path d="M8 8l0 .01"></path>
+                            <path d="M12 16l0 -5"></path>
+                            <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                          </svg>
+                        </div>
+                        <div
+                          class="button_label w-variant-8ec5a3e0-7ea4-907a-0467-9ed4aa0d3ce4"
+                        >
+                          Napište mi
+                        </div></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col col_6">
+                  <h3 class="margin-top margin-small heading-style-h4">
+                    Firemní údaje
+                  </h3>
+                  <p class="margin-top margin-small">
+                    Antonín Bureš<br />Rozsochy 96, 592 57
+                  </p>
+                  <p>
+                    IČ: 02035138<br />DIČ: CZ686100966
+                    <span class="text-size-small">(jsem plátce DPH)</span>
+                  </p>
+                  <p class="text-weight-medium">Bankovní spojení</p>
+                  <p>
+                    Číslo účtu: 5600712063/0800<br />IBAN:
+                    CZ90 0800 0000 0056 0071 2063
+                  </p>
+                  <p class="text-size-small">
+                    Fyzická osoba zapsaná v Živnostenském rejstříku od
+                    26.08.2013 — Městský úřad Bystřice nad Pernštejnem
+                  </p>
+                </div>
+                <div class="col col_6">
+                  <h3 class="margin-top margin-small heading-style-h4">Menu</h3>
+                  <ul role="list" class="footer_menu-list w-list-unstyled">
+                    <li>
+                      <a
+                        href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#"
+                        >Služby</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.antoninbures.com/blog">Blog</a>
+                    </li>
+                    <li>
+                      <a href="https://www.antoninbures.com/kontakt">Kontakt</a>
+                    </li>
+                    <li fs-cc="manager">
+                      <a
+                        href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#"
+                        fs-cc="open-preferences"
+                        aria-label="Cookie Preferences"
+                        >Nastavení cookies</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <div>
+      <div
+        fs-cc-scroll="disable"
+        fs-cc="preferences"
+        class="fs-cc-prefs2_component"
+      >
+        <div class="fs-cc-prefs2_form-wrapper w-form">
+          <form
+            id="cookie-preferences"
+            name="wf-form-Cookie-Preferences"
+            data-name="Cookie Preferences"
+            method="get"
+            class="fs-cc-prefs2_form"
+            data-wf-page-id="671cb4f281ae6642a907ef41"
+            data-wf-element-id="b02edc9e-2410-42ae-85ce-66e3388c4e1c"
+            data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e"
+          >
+            <div fs-cc="close" class="fs-cc-prefs2_close">
+              <div class="fs-cc-preferences2_close-icon w-embed">
+                <svg
+                  fill="currentColor"
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.414 8l4.293-4.293-1.414-1.414L8 6.586 3.707 2.293 2.293 3.707 6.586 8l-4.293 4.293 1.414 1.414L8 9.414l4.293 4.293 1.414-1.414L9.414 8z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div class="fs-cc-prefs2_content">
+              <div class="fs-cc-prefs2_space-small">
+                <div class="heading-style-h3">Nastavení cookies</div>
+              </div>
+              <div class="fs-cc-prefs2_option">
+                <div class="fs-cc-prefs2_toggle-wrapper">
+                  <div class="fs-cc-prefs2_checkbox-field">
+                    <input
+                      type="checkbox"
+                      disabled=""
+                      name="Nutne"
+                      class="fs-cc-prefs2_checkbox"
+                      checked=""
+                    />
+                    <div class="fs-cc-prefs2_checkbox-label">
+                      Nutné soubory cookie
+                    </div>
+                  </div>
+                  <div class="w-layout-vflex">
+                    <p class="text-weight-bold">Nezbytně nutné cookies</p>
+                    <p>
+                      Tyto soubory cookies jsou nezbytné pro správné fungování
+                      webových stránek. Bez těchto cookies by web nefungoval
+                      správně.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="fs-cc-prefs2_option hide">
+                <div class="fs-cc-prefs2_toggle-wrapper">
+                  <div class="fs-cc-prefs2_label">
+                    Marketingové soubory cookie
+                  </div>
+                  <label class="w-checkbox fs-cc-prefs2_checkbox-field"
+                    ><div
+                      class="w-checkbox-input w-checkbox-input--inputType-custom fs-cc-prefs2_checkbox"
+                    ></div>
+                    <input
+                      type="checkbox"
+                      name="marketing-2"
+                      id="marketing-2"
+                      data-name="Marketing 2"
+                      fs-cc-checkbox="marketing"
+                      style="opacity: 0; position: absolute; z-index: -1"
+                    /><span
+                      for="marketing-2"
+                      class="fs-cc-prefs2_checkbox-label w-form-label"
+                      >Essential</span
+                    ></label
+                  >
+                </div>
+              </div>
+              <div class="fs-cc-prefs2_option hide">
+                <div class="fs-cc-prefs2_toggle-wrapper">
+                  <div class="fs-cc-prefs2_label">
+                    Personalizované soubory cookie
+                  </div>
+                  <label class="w-checkbox fs-cc-prefs2_checkbox-field"
+                    ><div
+                      class="w-checkbox-input w-checkbox-input--inputType-custom fs-cc-prefs2_checkbox"
+                    ></div>
+                    <input
+                      type="checkbox"
+                      name="personalization-2"
+                      id="personalization-2"
+                      data-name="Personalization 2"
+                      fs-cc-checkbox="personalization"
+                      style="opacity: 0; position: absolute; z-index: -1"
+                    /><span
+                      for="personalization-2"
+                      class="fs-cc-prefs2_checkbox-label w-form-label"
+                      >Essential</span
+                    ></label
+                  >
+                </div>
+              </div>
+              <div class="fs-cc-prefs2_option">
+                <div class="fs-cc-prefs2_toggle-wrapper">
+                  <label class="w-checkbox fs-cc-prefs2_checkbox-field"
+                    ><div
+                      class="w-checkbox-input w-checkbox-input--inputType-custom fs-cc-prefs2_checkbox"
+                    ></div>
+                    <input
+                      type="checkbox"
+                      name="analytics-2"
+                      id="analytics"
+                      data-name="Analytics 2"
+                      fs-cc-checkbox="analytics"
+                      style="opacity: 0; position: absolute; z-index: -1"
+                    /><span
+                      for="analytics-2"
+                      class="fs-cc-prefs2_checkbox-label w-form-label"
+                      >Essential</span
+                    ></label
+                  >
+                  <div class="w-layout-vflex">
+                    <p class="text-weight-bold">
+                      Výkonnostní a analytické soubory cookies
+                    </p>
+                    <p>
+                      Analytické soubory cookies nám pomáhají vylepšovat naše
+                      webové stránky shromažďováním informací a podáváním zpráv
+                      o jeho používání. Jedná se o cookies Google Analytics.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="fs-cc-prefs2_option">
+                <div class="fs-cc-prefs2_toggle-wrapper">
+                  <label class="w-checkbox fs-cc-prefs2_checkbox-field"
+                    ><div
+                      class="w-checkbox-input w-checkbox-input--inputType-custom fs-cc-prefs2_checkbox"
+                    ></div>
+                    <input
+                      type="checkbox"
+                      name="analytics-2"
+                      id="analytics-2"
+                      data-name="Analytics 2"
+                      fs-cc-checkbox="marketing"
+                      style="opacity: 0; position: absolute; z-index: -1"
+                    /><span
+                      for="analytics-2"
+                      class="fs-cc-prefs2_checkbox-label w-form-label"
+                      >Essential</span
+                    ></label
+                  >
+                  <div class="w-layout-vflex">
+                    <p class="text-weight-bold">
+                      Soubory cookies pro reklamu a cílení
+                    </p>
+                    <p>
+                      Tyto soubory cookies shromažďují informace o tom, jak web
+                      používáte, které stránky jste navštívili a na které odkazy
+                      jste klikli. Všechna data jsou anonymizována a nelze je
+                      použít k vaší identifikaci. Jedná se o cookies Facebook
+                      pixel a Ecomail.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="fs-cc-prefs2_buttons-wrapper">
+                <a
+                  fs-cc="submit"
+                  href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#"
+                  class="button w-inline-block"
+                  ><div>Uložit nastavení</div></a
+                ><a
+                  fs-cc="allow"
+                  href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#"
+                  class="button w-button"
+                  >Povolit vše</a
+                ><a
+                  fs-cc="deny"
+                  href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#"
+                  class="button is-secondary w-button"
+                  >Zakázat vše</a
+                >
+              </div>
+            </div>
+          </form>
+          <div class="w-form-done"></div>
+          <div class="w-form-fail"></div>
+          <div fs-cc="close" class="fs-cc-prefs2_overlay"></div>
+        </div>
+      </div>
+      <div fs-cc="banner" class="fs-cc-banner2_component">
+        <div class="fs-cc-banner2_container">
+          <h3 class="heading-style-h4 margin-bottom margin-small">
+            Nastavení cookies na této stránce
+          </h3>
+          <p class="text-size-small margin-0">
+            Vážení uživatelé, cookies máte ve svých rukou, pro zachování
+            funkčnosti webu pracuji s vašimi soubory cookies, tj. malými
+            soubory, které se ukládají ve vašem prohlížeči. Některé z nich jsou
+            k fungování webu opravdu nezbytné, ale o některých můžete rozhodnout
+            sami. Nechám to na vás.
+          </p>
+          <div class="fs-cc-banner2_buttons-wrapper">
+            <div class="button-group is-cookie">
+              <a
+                fs-cc="allow"
+                href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#"
+                class="button is-small w-inline-block"
+                ><div>Souhlasím</div></a
+              >
+            </div>
+            <a
+              fs-cc="open-preferences"
+              href="webflow-slots-jak-funguji-a-k-cemu-slouzi-v-komponentovem-systemu.tmp.html#"
+              class="button is-link is-small w-inline-block"
+              ><div>Upravit nastavení</div></a
+            >
+          </div>
+          <div fs-cc="close" class="fs-cc-prefs2_close">
+            <div class="fs-cc-preferences2_close-icon w-embed">
+              <svg
+                fill="currentColor"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.414 8l4.293-4.293-1.414-1.414L8 6.586 3.707 2.293 2.293 3.707 6.586 8l-4.293 4.293 1.414 1.414L8 9.414l4.293 4.293 1.414-1.414L9.414 8z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=602ce80f7ad04e15a3aa545a"
+      type="text/javascript"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.prod.website-files.com/602ce80f7ad04e15a3aa545a/js/webflow.85b301a3.d6955e4c29206efb.js"
+      type="text/javascript"
+    ></script>
+  </body>
+</html>
